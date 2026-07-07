@@ -14,13 +14,14 @@
     <NoWarn>$(NoWarn);NU5017;NU5128;RS1038</NoWarn>
 
     <PackageId>Swevo.PollyAnalyzers</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Justin Bannister</Authors>
     <Copyright>Copyright (c) 2026 Justin Bannister</Copyright>
     <Description>Free, MIT-licensed Roslyn analyzers and code fixes that catch resilience/reliability anti-patterns: blocking calls on async APIs, async void methods, unobserved fire-and-forget tasks, swallowed exceptions, and HttpClient calls that drop an available CancellationToken. A resilience-focused companion to ReSharper/Roslynator, from the Polly ecosystem.</Description>
     <PackageTags>polly;resilience;roslyn;analyzer;code-fix;async;deadlock;fire-and-forget;cancellation-token;reliability;static-analysis;resharper-alternative;dotnet;csharp</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/Swevo/PollyAnalyzers</RepositoryUrl>
     <PackageProjectUrl>https://github.com/Swevo/PollyAnalyzers</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -29,7 +30,7 @@
     <IncludeSymbols>false</IncludeSymbols>
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
-    <PackageReleaseNotes>1.0.0: Initial release. PLY001-PLY005 resilience/reliability analyzers with code fixes.</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.1: Add missing package icon. 1.0.0: Initial release. PLY001-PLY005 resilience/reliability analyzers with code fixes.</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.*" PrivateAssets="all" />
@@ -42,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
     <!-- Place the analyzer/code-fix DLL in analyzers/dotnet/cs/ so NuGet loads it as an analyzer -->
     <None Include="$(OutputPath)$(AssemblyName).dll"
           Pack="true"
